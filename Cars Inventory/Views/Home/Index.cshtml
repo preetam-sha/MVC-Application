@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle" ng-controller="TestMy">
+        <h1 id="title">ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="#" class="btn btn-primary btn-md" ng-click="TestMethod();">Learn more &raquo;</a></p>
+    </section>
+
+    <script src="~/Scripts/customJs/HomeIndexController.js"></script>
+
+    <script src="~/Scripts/customJs/myCtrl.js"></script>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" ng-model="user.name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" ng-model="user.email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" ng-model="user.password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid" ng-click="signup()">Sign Up</button>
+        </form>
+    </div>
+
+</main>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Cars_Inventory.Models.Cars>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="text-center">
+    <img src="~/Content/Images/download.jpg" height="70" width="70" />
+    <h1 class="bold">Car Inventory</h1>
+</div>
+<table class="table table-responsive table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.New)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.New)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "CarsInventory", new { id = item.Id }, new { @class = "btn btn-success fa fa-solid fa-pen" })
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", "CarsInventory", new { id = item.Id }, new { @class = "btn btn-danger fa fa-trash" })
+            </td>
+
+
+        </tr>
+    }
+
+
+</table>
+<div class="float-md-end">
+    <a href="@Url.Action("Create", "CarsInventory")" class="btn btn-primary fa fa-plus ">
+        Create New
+    </a>
+</div>
+ 
+
